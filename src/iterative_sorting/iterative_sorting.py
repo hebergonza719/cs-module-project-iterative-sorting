@@ -22,7 +22,15 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
-
+    swap_count = 0
+    while swap_count >= 0:
+        swap_count = 0
+        for i in range(0, len(arr) - 1):
+            if arr[i] > arr[i+1]:
+                arr[i], arr[i+1] = arr[i+1], arr[i]
+                swap_count += 1
+        if swap_count == 0:
+            swap_count -= 1
 
     return arr
 
@@ -48,9 +56,3 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
-
-
-
-list_example = [5, 3, 7, 4, 2, 100, 1, 65, 6]
-
-print(selection_sort(list_example))
