@@ -3,14 +3,18 @@ def selection_sort(arr):
     # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         cur_index = i
-        smallest_index = cur_index
+        smallest_index = arr[cur_index]
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
-
+        for j in range(i + 1, len(arr)):
+            if smallest_index > arr[j]:
+                smallest_index = arr[j]        
 
         # TO-DO: swap
         # Your code here
+        arr.remove(smallest_index)
+        arr.insert(i, smallest_index)
 
     return arr
 
@@ -44,3 +48,9 @@ def counting_sort(arr, maximum=None):
 
 
     return arr
+
+
+
+list_example = [5, 3, 7, 4, 2, 100, 1, 65, 6]
+
+print(selection_sort(list_example))
